@@ -1,4 +1,4 @@
-Day_05_task
+Day_04_task
 1. Do the below programs in anonymous function & IIFE
 a. Print odd numbers in an array...........
   var arr = [1, 2, 3, 4, 5, 6];
