@@ -1,0 +1,238 @@
+Day_05_task
+1. Do the below programs in anonymous function & IIFE
+a. Print odd numbers in an array...........
+  var arr = [1, 2, 3, 4, 5, 6];
+
+    // a.Anonymous function:
+
+    var oddnum = function () {
+      return arr.filter((x) => x % 2 !== 0);
+    };
+    console.log(oddnum());
+
+    //  b. IIFE function:
+
+    (function () {
+      console.log(arr.filter((x) => x % 2 !== 0));
+    })();
+
+Convert all the strings to title caps in a string array
+    var array = ["chennai", "kerala", "telangana", "mumbai", "delhi"];
+
+    // a.Anonymous function
+
+    var titlecase = function () {
+      return array.map(
+        (string) => string.charAt(0).toUpperCase() + string.slice(1)
+      );
+    };
+    console.log(titlecase());
+
+    //  b. IIFE function
+
+    (function () {
+      console.log(
+        array.map((string) => string.charAt(0).toUpperCase() + string.slice(1))
+      );
+    })();
+c. Sum of all numbers in an array
+    var arr = [1, 2, 3, 4, 5, 6];
+
+    // a.Anonymous function
+
+    var sum = function () {
+      return arr.reduce((num, total) => {
+        return (total = num + total);
+      });
+    };
+    console.log(sum());
+
+    //  b. IIFE function
+
+    (function () {
+      console.log(
+        arr.reduce((num, total) => {
+          return (total = num + total);
+        })
+      );
+    })();
+d. Return all the prime numbers in an array
+    var arr = [2, 3, 4, 5, 6, 7, 8, 9];
+
+    // a.Anonymous function
+
+    var Primes = function () {
+      return arr.filter((num) => {
+        var isPrime = true;
+        for (var i = 2; i < num; i++) {
+          if (num % i == 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime == true) {
+          return num;
+        }
+      });
+    };
+    console.log(Primes());
+
+
+    //  b. IIFE function
+
+    (function () {
+      var result = arr.filter((num) => {
+        var isPrime = true;
+        for (var i = 2; i < num; i++) {
+          if (num % i == 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime == true) {
+          return num;
+        }
+      });
+      console.log(result);
+    })();
+e. Return all the palindromes in an array
+      var arr = ["malayalam", "dog", "racecar", "eve", "camera", "level"];
+
+      // a.Anonymous function
+
+      var palindromes = function () {
+        return arr.filter((string) => string == string.split("").reverse().join(""));
+      };
+      console.log(palindromes());
+
+      //  b. IIFE function
+
+      (function () {
+        console.log(
+          arr.filter((string) => string == string.split("").reverse().join(""))
+        );
+      })();
+f. Return median of two sorted arrays of same size
+      var a = [2, 5, 1, 4, 9];
+      var b = [20, 6, 8, 12, 7];
+      var arr = a.concat(b);
+      arr.sort((a, b) => {
+        return a - b;
+      });
+
+      // a.Anonymous function
+
+      var median = function () {
+        var med = (arr.length / 2).toFixed();
+        var result;
+
+        if (arr.length % 2 == 0) {
+          return arr[+med - 1] + +arr[med];
+        } else {
+          return arr[med];
+        }
+      };
+      console.log(median());
+
+      //  b. IIFE function
+
+      (function () {
+        var med = (arr.length / 2).toFixed();
+        var result;
+        if (arr.length % 2 == 0) {
+          console.log(arr[med - 1] + +arr[med]);
+        } else {
+          console.log(arr[med]);
+        }
+      })();
+g. Remove duplicates from an array
+      var arr = [1, 2, 3, 3, 1, 2, 6, 5, 7, 6];
+
+      // a.Anonymous function
+
+      var result = function () {
+        return Array.from(new Set(arr));
+      };
+
+      console.log(result());
+
+      //  b. IIFE function
+
+      (function () {
+        console.log(Array.from(new Set(arr)));
+      })();
+h. Rotate an array by k times
+      var arr = [1, 2, 3, 4, 5];
+
+      // a.Anonymous function
+
+      var rotate = function (k) {
+        arr.unshift(...arr.splice(arr.length - k, arr.length - 1));
+        return arr;
+      };
+
+      console.log(rotate(3));
+
+      //  b. IIFE function
+
+      (function (k) {
+        arr.unshift(...arr.splice(arr.length - k, arr.length - 1));
+        console.log(arr);
+      })(3);  
+
+3 . Do the below programs in Arrow functions.
+a. Print odd numbers in an array...........
+    var arr = [1, 2, 3, 4, 5, 6];
+
+    var oddnum = () => {
+      return arr.filter((x) => x % 2 !== 0);
+    };
+    console.log(oddnum());
+
+
+
+b. Convert all the strings to title caps in a string array
+   var array = ["chennai", "kerala", "telangana", "mumbai", "delhi"];
+
+    var titlecase = () => {
+      return array.map(
+        (string) => string.charAt(0).toUpperCase() + string.slice(1)
+      );
+    };
+    console.log(titlecase());
+c. Sum of all numbers in an array
+    var arr = [1, 2, 3, 4, 5, 6];
+
+    var sum = () => {
+      return arr.reduce((num, total) => {
+        return (total = num + total);
+      });
+    };
+    console.log(sum());
+d. Return all the prime numbers in an array
+    var arr = [2, 3, 4, 5, 6, 7, 8, 9];
+
+    var Primes = () => {
+      return arr.filter((num) => {
+        var isPrime = true;
+        for (var i = 2; i < num; i++) {
+          if (num % i == 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime == true) {
+          return num;
+        }
+      });
+    };
+    console.log(Primes());
+
+e. Return all the palindromes in an array
+     var arr = ["malayalam", "dog", "racecar", "eve", "camera", "level"];
+
+    var palindromes = () => {
+      return arr.filter((string) => string == string.split("").reverse().join(""));
+    };
+    console.log(palindromes());
+
